@@ -36,20 +36,4 @@ def list_buckets(client):
     for buck in bucks:
         names.append(buck['Name'])
     return names
-def create_clients(services, access_key, secret_key, region='us-east-1'):
-    import boto3
-    clients = []
-    for service in services:
-        client = boto3.client(service, aws_access_key_id=access_key, aws_secret_access_key=secret_key,
-                              region_name=region)
-        clients.append(client)
-    
-    return clients
-def create_resources(services, access_key, secret_key, region='us-east-1'):
-    import boto3
-    resources = []
-    for service in services:
-        resource = boto3.resource(service, aws_access_key_id=access_key, aws_secret_access_key=secret_key,
-                                  region_name=region)
-        resources.append(resource)
-    return resources
+
